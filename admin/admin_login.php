@@ -8,7 +8,7 @@ if(isset($_SESSION['user_id'])){
 
 if(isset($_POST['submit'])){
     $username = trim($_POST['username']);
-    $username = trim($_POST['password']);
+    $password = trim($_POST['password']);
 
     if(!empty($username) && !empty($password)){
         $result = login($username, $password, $ip);
