@@ -14,7 +14,12 @@ confirm_logged_in();
 </head>
 <body>
     <h2>Dashboard page</h2>
+<h3>You are in level</h3><?php echo getCurrentUserLevel(); ?>
+<?php if(!empty($_SESSION['user_level'])):?>
 
+    <a href="admin_user.php">Create New User</a>
+<?php endif; ?>
     <a href="admin_logout.php">Sign out</a>
+
 </body>
 </html>
