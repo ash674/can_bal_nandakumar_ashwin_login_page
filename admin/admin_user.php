@@ -62,21 +62,22 @@ foreach($user_level_map as $val => $label):?>
 
 <button type="submit" name="submit" >Create</button>
 
-<?php 
-if(isset($_POST['submit'])){
-$to = $_POST['email'];
-$subject = 'Created new user';
-$message = 'This email is to notify that you have successfully Created a new user';
-$headers = 'From: donotreply@gmail.com';
-mail($to, $subject, $message, $headers);
+<?php // Sending out mail to the user 
 
-function passwordGenerator() {
-    $all_possible_alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-    $password = array();
-    $alphabetsLen = strlen($all_possible_alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < 8; $i++) {
-        $pass_var = rand(0, $alphabetsLen);
-        $password[] = $all_possible_alphabet[$pass_var];
+if(isset($_POST['submit'])){ //Check if the form is submitted
+$to = $_POST['email']; // Setting the to mail address to the one we recieved from the form
+$subject = 'Created new user'; // Setting the subject of the mail
+$message = 'This email is to notify that you have successfully Created a new user'; // Setting the message of the mail
+$headers = 'From: donotreply@gmail.com'; // Setting the from address
+mail($to, $subject, $message, $headers); //Sending out the mail
+
+function passwordGenerator() { // Generating the password for the newly created user
+    $all_possible_alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'; // setting alphanumericals for the system to go through 
+    $password = array(); // password is an array so the system can set the password as more than 1 character
+    $alphabetsLen = strlen($all_possible_alphabet); 
+    for ($i = 0; $i < 5; $i++) { // For loop, so that the system can execute it 6 times (length of the password) 
+        $pass_var = rand(0, $alphabetsLen); // pass_var is an variable which has random function to the length of alphanumericals so that it chooses random character from alphanumericals everytime the loop runs
+        $password[] = $all_possible_alphabet[$pass_var]; //password is stored 
     } 
 }
 }
