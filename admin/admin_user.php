@@ -1,7 +1,7 @@
 <?php
 require_once '../load.php';
 
-confirm_logged_in(true);
+confirm_logged_in();
 
 if(isset($_POST['submit'])) {
     $data = array(
@@ -64,7 +64,7 @@ foreach($user_level_map as $val => $label):?>
 
 <?php 
 if(isset($_POST['submit'])){
-$to = `$user_email`;
+$to = $_POST['email'];
 $subject = 'Created new user';
 $message = 'This email is to notify that you have successfully Created a new user';
 $headers = 'From: donotreply@gmail.com';
