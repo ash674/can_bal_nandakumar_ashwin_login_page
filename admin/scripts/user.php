@@ -27,7 +27,7 @@ function createUser($user_data){
 $pdo = Database::getInstance()->getConnection();
 
 $create_user_query = 'INSERT INTO tbl_user(user_fname, user_name, user_pass, user_email, user_level)';
-$create_user_query.= 'VALUES(:fname, :username, :email, :password, :user_le)';
+$create_user_query.= ' VALUES(:fname, :username, :password, :email, :user_level)';
 $create_user_set = $pdo->prepare($create_user_query);
 $create_user_result = $create_user_set->execute(
 
