@@ -1,0 +1,2 @@
+1.Mail - https://www.w3schools.com/php/func_mail_mail.asp
+2. Password - https://stackoverflow.com/questions/6101956/generating-a-random-password-in-php
