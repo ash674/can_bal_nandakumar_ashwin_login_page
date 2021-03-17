@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
         $message = $result;
     }
     else {
-        $message ='';
+        $message ='fill up please';
     }
 
 }
