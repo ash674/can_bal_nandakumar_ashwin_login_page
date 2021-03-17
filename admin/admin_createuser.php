@@ -1,7 +1,7 @@
 <?php
 require_once '../load.php';
 
-confirm_logged_in();
+confirm_logged_in(true);
 
 if(isset($_POST['submit'])) {
     $data = array(
@@ -9,9 +9,8 @@ if(isset($_POST['submit'])) {
         'username'=>trim($_POST['username']),
         'email'=>trim($_POST['email']),
         'password'=>trim($_POST['password']),
-        'user_level'=>trim($_POST['user_level']),
-
-    );
+        'user_level'=>trim($_POST['user_level'])
+ );
 
     $message = createUser($data);
 }

@@ -1,6 +1,7 @@
 body {
-    color: #4f5354;
+ color: #4f5354;
 display: flex;
+flex-direction: row;
 justify-content: center;
 font-family: 'Quicksand',Arial,Helvetica, sans-serif;
 background: rgb(27,187,247);
@@ -10,6 +11,13 @@ form {
     display: flex;
     flex-direction: column;
     margin-top: 270px;
+    margin-left: 0px;
+}
+
+.options a{
+    text-decoration: none;
+    margin-left: 5px;
+    color: white;
 }
 
     input{
@@ -20,11 +28,12 @@ form {
     }
 
     button {
-        display: flex;margin: 0 auto;
+        display: flex;
+        margin: 0 auto;
         justify-content: center;
         border: none;
         background-color: white;
-        
+        margin-top: 15px;
 font-family: 'Quicksand',Arial,Helvetica, sans-serif;
         width: 80px;
         border-radius: 5px;
